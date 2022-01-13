@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="apple-touch-icon" href="/logo192.png">
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>my-pizza-house</title>
+    <link href="/static/css/main.8b186e20.chunk.css" rel="stylesheet">
+    <script src="https://js.stripe.com/v3"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <nav class=" mx-auto flex items-center justify-between py-4 bg-gray-100 " id="navheight"><a href="/"><img class="logo"
+                    src="/images/logo.png" alt="Pizza House" style="height: 100px; width: 100px;"></a>
+            <ul class=" items-center nav-links visible">
+                <li class="homeitem"><a href="/">Home</a></li>
+                <li class="productitem" id=""><a href="/products">Products</a> </li>
+                <li class="cartitem"><a href="/Cart">Cart</a></li>
+                <li class="cartimg">
+                    <div class="items-center cartimg mr-10"
+                        style="background: rgb(245, 158, 13); display: flex; padding: 6px 12px; border-radius: 20px;">
+                        <span>0</span><img class="object-contain h-48 w-full ..." src="/images/cart.png" alt="cart"
+                            style="height: 40px; width: 20px; margin-left: 10px;">
+                    </div>
+                </li>
+            </ul><button class="navbutton"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div class="hero py-16 home">
+            <div class="container mx-auto" style="display: flex; align-items: center;">
+                <div class="w-1/2 px-12">
+                    <h6 class="text-lg"><em>Are you Hungry?</em></h6>
+                    <h1 class="text-3xl md:text-6xl font-bold mb-5">Don't Wait</h1><a
+                        class="px-6 py-2 rounded-full text-white font-bold bg-yellow-500 hover:bg-black hover:font-white"
+                        href="/Cart">Order Now</a>
+                </div>
+                <div class="w-1/2"><img src="/images/pizza.png" alt="pizza"></div>
+            </div>
+        </div>
+        <div>
+            <div class="container mx-auto pb-24 px-12">
+                <h1 class="text-lg font-bold my-8 ">Products</h1>
+                <div class="grid grid-cols-5 griditem my-8 gap-24 gridcontainer">
+                    <div><a href="/products/0"><img class="w-40 h-40 productimg" src="/images/pizza1.jpg"
+                                alt="pizza2"></a>
+                        <div>
+                            <h2 class="text-lg font-bold py-2 text-center font">Monday Special</h2>
+                            <div class="bg-gray-200 py-1 w-20 rounded-full px-4  text-center"> Small</div>
+                        </div>
+                        <div class="flex items-center mt-4 justify-between"><b>₹500</b><button class="bg-yellow-500 addbtn py-1  
+                  hover:text-white  py-1 px-4 rounded-full font-bold">ADD</button></div>
+                    </div>
+                    <div><a href="/products/1"><img class="w-40 h-40 productimg" src="/images/pizza2.jpg"
+                                alt="pizza2"></a>
+                        <div>
+                            <h2 class="text-lg font-bold py-2 text-center font">Tuesday Special</h2>
+                            <div class="bg-gray-200 py-1 w-20 rounded-full px-4  text-center"> Small</div>
+                        </div>
+                        <div class="flex items-center mt-4 justify-between"><b>₹900</b><button class="bg-yellow-500 addbtn py-1  
+                  hover:text-white  py-1 px-4 rounded-full font-bold">ADD</button></div>
+                    </div>
+                    <div><a href="/products/2"><img class="w-40 h-40 productimg" src="/images/pizza3.jpg"
+                                alt="pizza2"></a>
+                        <div>
+                            <h2 class="text-lg font-bold py-2 text-center font">Wednesday Special</h2>
+                            <div class="bg-gray-200 py-1 w-20 rounded-full px-4  text-center"> Small</div>
+                        </div>
+                        <div class="flex items-center mt-4 justify-between"><b>₹1500</b><button class="bg-yellow-500 addbtn py-1  
+                  hover:text-white  py-1 px-4 rounded-full font-bold">ADD</button></div>
+                    </div>
+                    <div><a href="/products/3"><img class="w-40 h-40 productimg" src="/images/pizza4.jpg"
+                                alt="pizza2"></a>
+                        <div>
+                            <h2 class="text-lg font-bold py-2 text-center font">Thrusday Special</h2>
+                            <div class="bg-gray-200 py-1 w-20 rounded-full px-4  text-center"> Small</div>
+                        </div>
+                        <div class="flex items-center mt-4 justify-between"><b>₹1200</b><button class="bg-yellow-500 addbtn py-1  
+                  hover:text-white  py-1 px-4 rounded-full font-bold">ADD</button></div>
+                    </div>
+                    <div><a href="/products/4"><img class="w-40 h-40 productimg" src="/images/pizza5.jpg"
+                                alt="pizza2"></a>
+                        <div>
+                            <h2 class="text-lg font-bold py-2 text-center font">Friday Special</h2>
+                            <div class="bg-gray-200 py-1 w-20 rounded-full px-4  text-center"> Small</div>
+                        </div>
+                        <div class="flex items-center mt-4 justify-between"><b>₹500</b><button class="bg-yellow-500 addbtn py-1  
+                  hover:text-white  py-1 px-4 rounded-full font-bold">ADD</button></div>
+                    </div>
+                    <div><a href="/products/5"><img class="w-40 h-40 productimg" src="/images/pizza6.jpg"
+                                alt="pizza2"></a>
+                        <div>
+                            <h2 class="text-lg font-bold py-2 text-center font">Saturday Special</h2>
+                            <div class="bg-gray-200 py-1 w-20 rounded-full px-4  text-center"> Small</div>
+                        </div>
+                        <div class="flex items-center mt-4 justify-between"><b>₹800</b><button class="bg-yellow-500 addbtn py-1  
+                  hover:text-white  py-1 px-4 rounded-full font-bold">ADD</button></div>
+                    </div>
+                    <div><a href="/products/6"><img class="w-40 h-40 productimg" src="/images/pizza.png"
+                                alt="pizza2"></a>
+                        <div>
+                            <h2 class="text-lg font-bold py-2 text-center font">Sunday Special</h2>
+                            <div class="bg-gray-200 py-1 w-20 rounded-full px-4  text-center"> Small</div>
+                        </div>
+                        <div class="flex items-center mt-4 justify-between"><b>₹700</b><button class="bg-yellow-500 addbtn py-1  
+                  hover:text-white  py-1 px-4 rounded-full font-bold">ADD</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer bg-gray-100">
+            <div class="row">
+            <ul>
+                <li id="footeritem-1"><a href="https://www.facebook.com/profile.php?id=100028892232243"><i
+                            class="fab fa-facebook fa-2x"></i></a></li>
+                <li id="footeritem-2"><a href="https://www.instagram.com/namangarg0802/"><i
+                            class="fab fa-instagram fa-2x"></i></a></li>
+                <li id="footeritem-3"><a href="https://www.linkedin.com/in/naman-garg-a01b34200/"><i
+                            class="fab fa-linkedin fa-2x"></i></a></li>
+                <li id="footeritem-4"><a href="https://github.com/namangarg802"><i class="fab fa-github fa-2x"></i></a>
+                </li>
+                <li id="footeritem-5"><a href="https://namangarg802@gmail.com"><i class="fas fa-envelope fa-2x"></i></a>
+                </li>
+            </ul>
+        </div>
+            <p>© 2021Copyright Pranay Galande</p>
+        </div>
+    </div>
+    <script>!function (e) { function r(r) { for (var n, l, a = r[0], f = r[1], i = r[2], p = 0, s = []; p < a.length; p++)l = a[p], Object.prototype.hasOwnProperty.call(o, l) && o[l] && s.push(o[l][0]), o[l] = 0; for (n in f) Object.prototype.hasOwnProperty.call(f, n) && (e[n] = f[n]); for (c && c(r); s.length;)s.shift()(); return u.push.apply(u, i || []), t() } function t() { for (var e, r = 0; r < u.length; r++) { for (var t = u[r], n = !0, a = 1; a < t.length; a++) { var f = t[a]; 0 !== o[f] && (n = !1) } n && (u.splice(r--, 1), e = l(l.s = t[0])) } return e } var n = {}, o = { 1: 0 }, u = []; function l(r) { if (n[r]) return n[r].exports; var t = n[r] = { i: r, l: !1, exports: {} }; return e[r].call(t.exports, t, t.exports, l), t.l = !0, t.exports } l.m = e, l.c = n, l.d = function (e, r, t) { l.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, l.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, l.t = function (e, r) { if (1 & r && (e = l(e)), 8 & r) return e; if (4 & r && "object" == typeof e && e && e.__esModule) return e; var t = Object.create(null); if (l.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: e }), 2 & r && "string" != typeof e) for (var n in e) l.d(t, n, function (r) { return e[r] }.bind(null, n)); return t }, l.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return l.d(r, "a", r), r }, l.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, l.p = "/"; var a = this["webpackJsonpmy-cart"] = this["webpackJsonpmy-cart"] || [], f = a.push.bind(a); a.push = r, a = a.slice(); for (var i = 0; i < a.length; i++)r(a[i]); var c = f; t() }([])</script>
+    <script src="/static/js/2.9053765a.chunk.js"></script>
+    <script src="/static/js/main.59846775.chunk.js"></script><iframe name="__privateStripeMetricsController9820"
+        frameborder="0" allowtransparency="true" scrolling="no" allow="payment *"
+        src="https://js.stripe.com/v3/m-outer-f7902241893e7a497417843cb15dc858.html#url=https%3A%2F%2Fmy-pizza-house.herokuapp.com%2F&amp;title=my-pizza-house&amp;referrer=&amp;muid=e75b7ea1-3cc0-4090-9749-ed620e673062c3d898&amp;sid=c24e2c6d-ab56-48cf-81b3-acd7e30fc9464b4f8d&amp;version=6&amp;preview=false"
+        aria-hidden="true" tabindex="-1"
+        style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
+</body>
+
+</html>
